@@ -2,4 +2,4 @@ Required libs:
 "Adafruit_GFX.h"	https://github.com/adafruit/Adafruit-GFX-Library
 "Adafruit_PCD8544.h"	https://github.com/adafruit/Adafruit-PCD8544-Nokia-5110-LCD-library
 
-I copied the libs to:	
+I copied the libs to:	/usr/share/arduino/libraries/
