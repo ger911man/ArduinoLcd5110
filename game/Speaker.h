@@ -5,7 +5,7 @@
 #ifndef _SPEAKER_H
 #define _SPEAKER_H
 
-#include "Arduino.h"
+#include "Globals.h"
 
 class Speaker{
 public:

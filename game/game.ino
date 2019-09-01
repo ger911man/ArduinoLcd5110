@@ -3,7 +3,6 @@
 #include "Globals.h"
 #include "Speaker.h"
 
-
 // ----------------------------------------- VARS -----------------------------------------
 Adafruit_PCD8544 display = Adafruit_PCD8544(PIN_LCD_SCLK, PIN_LCD_DIN, PIN_LCD_DC, PIN_LCD_SC, PIN_LCD_RST);
 Speaker speaker = Speaker(PIN_SPEAKER);
@@ -11,7 +10,6 @@ uint32_t frameCounter = 0;
 uint32_t  currTime = 0;
 uint32_t  prevTime = 0;
 uint32_t  deltaTime = 0;
-
 
 // ----------------------------------------- SETUP -----------------------------------------
 void setup() {
@@ -35,12 +33,13 @@ uint8_t mel = 0;
 void loop() {
     // ----------------------------------------- PRESETS -----------------------------------------
     display.clearDisplay();
-    deltaTime = millis() - prevTime;
+    currTime = millis();
+    deltaTime = currTime - prevTime;
 
     // ----------------------------------------- MISIC -----------------------------------------
     speaker.playMelody();
 //    speaker.soundJump();
-    if(frameCounter%1000 == 0){
+    if(frameCounter%5000 == 0){
         speaker.replaceCurrentlyPlayingNoteWith(400,100);
         speaker.setMelodyByNumber(mel++);
         if(mel > 5) mel = 0;
@@ -50,8 +49,8 @@ void loop() {
 
 
     // ----------------------------------------- DRAWING -----------------------------------------
-    display.setCursor(10,10);
-    display.println("-=[Game]=-");
+    display.setCursor(60,0);
+    display.println(deltaTime);
 
     // ----------------------------------------- FINAL -----------------------------------------
 //    displayScreenFrame();
