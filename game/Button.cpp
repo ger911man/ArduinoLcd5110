@@ -47,3 +47,7 @@ boolean Button::getState(){ // Check if button remain pressed or released
     prevState = currentState;
     return result;
 }
+
+boolean Button::getPrevState(){
+    return prevState;
+}

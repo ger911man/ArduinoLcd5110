@@ -15,6 +15,8 @@ public:
 
     boolean getState(); // Check the button state, returns true if button remain pressed, false if unpressed
 
+    boolean getPrevState(); // Check prev button state
+
 private:
     boolean currentState;
     boolean prevState;
