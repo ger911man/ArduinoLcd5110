@@ -12,7 +12,7 @@ public:
     // constructor
     Speaker(uint8_t pinSpeaker);
 
-    // changes melody by its #
+    // changes speaker by its #
     // #0 = melodyError
     // #1 = melodyImperialMarch
     // #2 = melodyMarioTitle
@@ -21,7 +21,7 @@ public:
     // #5 = melodyPotter
     void setMelodyByNumber(uint8_t melodyNumber);
 
-    // changes melody by its name
+    // changes speaker by its name
     void setErrorMelody();
     void setImperialMarchMelody();
     void setMarioTitleMelody();
@@ -29,10 +29,10 @@ public:
     void setPiratesMelody();
     void setPotterMelody();
 
-    // sounds melody notes one by one
+    // sounds speaker notes one by one
     void playMelody();
 
-    //change currently playing note to another (when you ned short sound effect instead melody)
+    //change currently playing note to another (when you ned short sound effect instead speaker)
     void replaceCurrentlyPlayingNoteWith(uint16_t note, uint16_t duration);
 
     //play jumping note
@@ -57,7 +57,7 @@ private:
     uint16_t noteToPlay = 0;
     uint16_t noteToPlayDuration = 0;
     uint16_t melodySize = 0;
-    uint16_t melodyNumber = 2; //default melody#2 (Mario)
+    uint16_t melodyNumber = 2; //default speaker#2 (Mario)
 };
 
 #endif //_SPEAKER

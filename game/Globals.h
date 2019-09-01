@@ -34,5 +34,5 @@
 #define PIN_SPEAKER 13
 
 // ----------------------------------------- GLOBAL VARS -----------------------------------------
-
+extern uint32_t deltaTime;
 #endif //_GLOBALS_H

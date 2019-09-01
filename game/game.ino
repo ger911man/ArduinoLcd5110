@@ -2,10 +2,12 @@
 #include "Adafruit_PCD8544.h"
 #include "Globals.h"
 #include "Speaker.h"
+#include "Dood.h"
 
 // ----------------------------------------- VARS -----------------------------------------
 Adafruit_PCD8544 display = Adafruit_PCD8544(PIN_LCD_SCLK, PIN_LCD_DIN, PIN_LCD_DC, PIN_LCD_SC, PIN_LCD_RST);
 Speaker speaker = Speaker(PIN_SPEAKER);
+Dood dood = Dood(0,0,&display,&speaker);
 uint32_t frameCounter = 0;
 uint32_t  currTime = 0;
 uint32_t  prevTime = 0;
@@ -51,6 +53,7 @@ void loop() {
     // ----------------------------------------- DRAWING -----------------------------------------
     display.setCursor(60,0);
     display.println(deltaTime);
+    dood.display();
 
     // ----------------------------------------- FINAL -----------------------------------------
 //    displayScreenFrame();
