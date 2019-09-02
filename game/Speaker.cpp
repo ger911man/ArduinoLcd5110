@@ -88,40 +88,48 @@ void Speaker::playMelody(){
 
 void Speaker::setMelodyByNumber(uint8_t melodyNumber) {
     this->melodyNumber = melodyNumber;
+    melodySize = sizesTable[melodyNumber];
     noteCounter = 0;
 }
 
 void Speaker::setErrorMelody() {
     melodyNumber = 0;
     noteCounter = 0;
+    melodySize = sizesTable[melodyNumber];
 }
 
 void Speaker::setImperialMarchMelody() {
     melodyNumber = 1;
     noteCounter = 0;
+    melodySize = sizesTable[melodyNumber];
 }
 
 void Speaker::setMarioTitleMelody() {
     melodyNumber = 2;
     noteCounter = 0;
+    melodySize = sizesTable[melodyNumber];
 }
 
 void Speaker::setMarioUnderworldMelody() {
     melodyNumber = 3;
     noteCounter = 0;
+    melodySize = sizesTable[melodyNumber];
 }
 
 void Speaker::setPiratesMelody() {
     melodyNumber = 4;
     noteCounter = 0;
+    melodySize = sizesTable[melodyNumber];
 }
 
 void Speaker::setPotterMelody() {
     melodyNumber = 5;
     noteCounter = 0;
+    melodySize = sizesTable[melodyNumber];
 }
 
 void Speaker::replaceCurrentlyPlayingNoteWith(uint16_t note, uint16_t duration){
+    // TODO: make it more smoth
     noteStartedAt = millis();
     noteToPlayDuration = duration;
     tone(pinSpeaker, note, duration);

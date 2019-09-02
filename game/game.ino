@@ -4,6 +4,7 @@
 #include "Speaker.h"
 #include "Dood.h"
 #include "Button.h"
+#include "BackgroungHills.h"
 
 // ----------------------------------------- VARS -----------------------------------------
 Adafruit_PCD8544 display = Adafruit_PCD8544(PIN_LCD_SCLK, PIN_LCD_DIN, PIN_LCD_DC, PIN_LCD_SC, PIN_LCD_RST);
@@ -12,6 +13,7 @@ Dood dood = Dood(0,0,&display,&speaker);
 Button buttonLeft = Button(PIN_BUTTON_LEFT, &speaker);
 Button buttonRight = Button(PIN_BUTTON_RIGHT, &speaker);
 Button buttonUp = Button(PIN_BUTTON_UP, &speaker);
+BackgroungHills backgroungHills = BackgroungHills(BACKGROUND_X0, BACKGROUND_Y0, BACKGROUND_X1, BACKGROUND_Y1, &display);
 
 uint32_t frameCounter = 0;
 uint32_t  currTime = 0;
@@ -77,6 +79,9 @@ void loop() {
     display.setCursor(60,0);
     display.println(deltaTime);
     dood.display();
+    if(frameCounter %2 == 0){
+        backgroungHills.displayMountainsShiftedBy(1);
+    }
 
     // ----------------------------------------- FINAL -----------------------------------------
 //    displayScreenFrame();
