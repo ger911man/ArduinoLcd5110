@@ -2,13 +2,13 @@
 #define BACKGROUNGHILLS_H
 
 #include "BackgroungHills.h"
-#include "Adafruit_GFX.h"
-#include "Adafruit_PCD8544.h"
+#include "Adafruit_GFX_extended.h"
+#include "Adafruit_PCD8544_extended.h"
 
 class BackgroungHills {
-    
+
 public:
-    BackgroungHills(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1, Adafruit_PCD8544* displayBG);
+    BackgroungHills(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1, Adafruit_PCD8544_extended* displayBG);
 
     void displayMountains(); //draw background to display's buffer
 
@@ -23,7 +23,7 @@ private:
     uint8_t y0;
     uint8_t x1;
     uint8_t y1;
-    Adafruit_PCD8544* displayBG;
+    Adafruit_PCD8544_extended* displayBG;
     uint8_t *horizonArray;
     uint8_t horizonArraySize;
     boolean isUphill = true;

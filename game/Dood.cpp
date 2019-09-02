@@ -112,7 +112,7 @@ const uint8_t PROGMEM spriteDood[6][32] = {
 };
 
 //Constructor
-Dood::Dood(uint8_t x0, uint8_t y0, Adafruit_PCD8544* display, Speaker* melody){
+Dood::Dood(uint8_t x0, uint8_t y0, Adafruit_PCD8544_extended* display, Speaker* melody){
     uint8_t prevWalkSpriteChangeAtX = x0;
     coordinates0 =  Vector(x0, y0);
     coordinates1 =  Vector(x0 + DOOD_SIZE_X, y0 + DOOD_SIZE_Y);
@@ -170,6 +170,8 @@ void Dood::display(){
 
     // ----------------------------------------- Display -----------------------------------------
     displayLCD->drawBitmap(coordinates0.getX(), coordinates0.getY(), spriteDood[spriteNumber], DOOD_SIZE_X, DOOD_SIZE_Y, BLACK);
+
+//    displayLCD->drawBitmap(coordinates0.getX(), coordinates0.getY(), spriteDood[spriteNumber], DOOD_SIZE_X, DOOD_SIZE_Y, BLACK);
 //    displayLCD->setCursor(60,0);
 //    displayLCD->println(deltaTime);
 //    displayLCD->println(coordinates0.asString());

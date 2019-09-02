@@ -1,6 +1,7 @@
 #include "BackgroungHills.h"
+#include "Adafruit_PCD8544_extended.h"
 
-BackgroungHills::BackgroungHills(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1, Adafruit_PCD8544* displayBG){
+BackgroungHills::BackgroungHills(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1, Adafruit_PCD8544_extended* displayBG){
     this->x0 = x0;
     this->y0 = y0;
     this->x1 = x1;

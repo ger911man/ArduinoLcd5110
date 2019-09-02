@@ -4,8 +4,8 @@
 #include "Globals.h"
 #include "Vector.h"
 #include "Speaker.h"
-#include "Adafruit_GFX.h"
-#include "Adafruit_PCD8544.h"
+#include "Adafruit_GFX_extended.h"
+#include "Adafruit_PCD8544_extended.h"
 
 #define GRAVITY_VELOCITY 0.2
 #define BRAKING_VELOCITY 0.05
@@ -18,7 +18,7 @@
 class Dood {
 public:
     //constructor
-    Dood(uint8_t x0, uint8_t y0, Adafruit_PCD8544* display, Speaker* melody);
+    Dood(uint8_t x0, uint8_t y0, Adafruit_PCD8544_extended* display, Speaker* melody);
 
     //calculate coordinates of dood according to it's speeds & velocities, put it's sprite to the screen buffer
     void display();
@@ -59,7 +59,7 @@ private:
 //    boolean isAlive = true;
 //    boolean isRiding = false; //isMooving
 //    boolean isJumping = false;
-    Adafruit_PCD8544* displayLCD;
+    Adafruit_PCD8544_extended* displayLCD;
     Speaker* melody;
 
     void doodStayOnSurface();

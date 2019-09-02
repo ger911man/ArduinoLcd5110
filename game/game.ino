@@ -1,5 +1,6 @@
-#include "Adafruit_GFX.h"
-#include "Adafruit_PCD8544.h"
+//#include "Adafruit_GFX.h"
+#include "Adafruit_GFX_extended.h"
+#include "Adafruit_PCD8544_extended.h"
 #include "Globals.h"
 #include "Speaker.h"
 #include "Dood.h"
@@ -7,7 +8,7 @@
 #include "BackgroungHills.h"
 
 // ----------------------------------------- VARS -----------------------------------------
-Adafruit_PCD8544 display = Adafruit_PCD8544(PIN_LCD_SCLK, PIN_LCD_DIN, PIN_LCD_DC, PIN_LCD_SC, PIN_LCD_RST);
+Adafruit_PCD8544_extended display = Adafruit_PCD8544_extended(PIN_LCD_SCLK, PIN_LCD_DIN, PIN_LCD_DC, PIN_LCD_SC, PIN_LCD_RST);
 Speaker speaker = Speaker(PIN_SPEAKER);
 Dood dood = Dood(0,0,&display,&speaker);
 Button buttonLeft = Button(PIN_BUTTON_LEFT, &speaker);
